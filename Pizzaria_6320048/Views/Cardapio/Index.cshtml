@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Pizzaria_6320048.Models.Cardapio>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<center><img src="~/imgs/CardapioView.jpg" style="bottom: 0px; width: 100%"/> </center>
+    <br />
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Pizza)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sabor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ValorInt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ValorBrot)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pizza)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sabor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ValorInt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ValorBrot)
+        </td>
+    </tr>
+}
+</table>
+
+<form method="get" action="~/Cardapio/Index1">
+    <center> <button class="btn btn-primary" type="submit">Editar cardápio</button> </center>
+</form>

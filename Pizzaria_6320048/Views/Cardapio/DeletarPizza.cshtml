@@ -1,0 +1,56 @@
+﻿@model Pizzaria_6320048.Models.Cardapio
+
+@{
+    ViewBag.Title = "DeletarPizza";
+}
+
+<h2>DeletarPizza</h2>
+
+<h3>Qual Pizza você deseja deletar?</h3>
+<div>
+    <h4>Cardapio</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Pizza)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pizza)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sabor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sabor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ValorInt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ValorInt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ValorBrot)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ValorBrot)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm("DeletarPizza", "Cardapio")) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Deletar" class="btn btn-success" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

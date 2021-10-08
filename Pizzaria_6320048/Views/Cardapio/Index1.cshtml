@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Pizzaria_6320048.Models.Cardapio>
+
+@{
+    ViewBag.Title = "Index1";
+}
+
+<center><img src="~/imgs/EditarCardapioView.jpg" style="bottom: 0px; width: 100%;"/> </center>
+<br />
+
+
+<center>
+    <button class="btn btn-outline-info">
+        @Html.ActionLink("Adicionar nova Pizza", "NovaPizza")
+    </button>
+</center>
+<br />
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Pizza)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sabor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ValorInt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ValorBrot)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pizza)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sabor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorInt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorBrot)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "EditarPizza", new { id = item.Id }) |
+                @Html.ActionLink("Deletar", "DeletarPizza", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>
+
+<form method="get" action="~/Cardapio/Index">
+    <center> <button class="btn btn-primary" type="submit">Voltar à cardápio</button> </center>
+</form>
